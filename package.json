@@ -1,0 +1,17 @@
+{
+  "name": "results_summary_component",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "compile:sass": "sass sass/_main.scss css/style.css -w"
+  },
+  "author": "collins",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.66.1"
+  },
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}

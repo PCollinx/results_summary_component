@@ -1,0 +1,198 @@
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 112.5%; // 10px/16px = 62.5% -> 1rem = 10px
+}
+
+body {
+    font-family: 'Hanken Grotesk', sans-serif;
+    background-color: $pale-blue;
+    font-weight: 500;
+    // line-height: 1.6;
+}
+
+.section {
+
+    height: 50vh;
+    width: 50vw;
+    background-color: $white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: rgba(0, 0, 0, 0.8);
+    border-radius: 30px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media only screen and (max-width: 1200px) {
+        grid-template-columns: none;
+        border-radius: none;
+
+        height: 80vh;
+    }
+
+    @media only screen and (max-width: 700px) {
+        height: 70vh;
+        width: 60vw;
+    }
+
+    @media only screen and (max-width: 500px) {
+        height: 60vh;
+        width: 75vw;
+    }
+
+    @media only screen and (max-width: 400px) {
+        height: 50vh;
+        width: 85vw;
+    }
+    
+
+}
+
+.result {
+    background-image: linear-gradient(to bottom, $light-slate-blue, $light-royal-blue);
+    color: $white;
+    border-radius: 30px;
+    border: rgba(0, 0, 0, 0.8);
+    padding: 2rem 3rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    &__head {
+        color: $light-white;
+        margin-bottom: 1rem;
+    }
+
+    &__content {
+        width: 8rem;
+        height: 8rem;
+        background-image: linear-gradient(to bottom, $violet-blue, $persian-blue);
+        border-radius: 50%;
+        padding: 1.5rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-1 {
+            font-size: 50px;
+            font-weight: 700;
+            
+        }
+
+        &-2 {
+            font-size: 14px;
+            color: $light-white;
+            // line-height: 0;
+        }
+    }
+
+    &__remark {
+        font-weight: 400;
+    }
+
+    &__text {
+        text-align: center;
+        color: $light-white;
+    }
+}
+
+.summary {
+    border: rgba(0, 0, 0, 0.8);
+    border-radius: 30px;
+    padding: 1.5rem 2rem;
+    background-color: $white;
+
+    display: grid;
+    flex-direction: column;
+
+    @media only screen and (max-width: 1200px) {
+        border-radius: none;
+    }
+
+    &__head {
+        margin-bottom: 1rem;
+    }
+
+    &__ratings {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &-reaction {
+            background-color: hsl(0, 100%, 96%);
+            padding: .8rem .5rem;
+            border-radius: 10px;
+
+            @include displayFlex;
+            
+            &--text {
+                color: $light-red;
+                flex: 1;
+                margin-left: .5rem;
+            }
+        }
+
+        &-memory {
+            background-color: hsl(39, 100%, 96%);
+            padding: .8rem .5rem;
+            border-radius: 10px;
+
+            @include displayFlex;
+            
+            &--text {
+                color: $orangey-yellow;
+                flex: 1;
+                margin-left: .5rem;
+            }
+        }
+
+        &-verbal {
+            background-color: hsl(166, 100%, 96%);
+            padding: .8rem .5rem;
+            border-radius: 10px;
+
+            @include displayFlex;
+
+            &--text {
+                color: $green-teal;
+                flex: 1;
+                margin-left: .5rem;
+            }
+        }
+
+        &-visual {
+            background-color: hsl(234, 85%, 96%);
+            padding: .8rem .5rem;
+            border-radius: 10px;
+
+            @include displayFlex;
+            
+            &--text {
+                color: $cobalt-blue;
+                flex: 1;
+                margin-left: .5rem;
+            }
+        }
+    }
+}
+
+
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
